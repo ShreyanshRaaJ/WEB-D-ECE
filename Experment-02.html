@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ECE-3 College Timetable</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px 12px;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background-image:
+        linear-gradient(rgba(35, 0, 0, 0.48),
+                        rgba(35, 0, 0, 0.58)),
+        url("./LO.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1450px;
+    margin: auto;
+    padding: 22px;
+    background: rgba(20, 8, 8, 0.72);
+    border: 1px solid rgba(255, 100, 70, 0.7);
+    border-radius: 12px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin-bottom: 8px;
+    color: #ff7043;
+    font-size: 30px;
+}
+
+.header h2 {
+    margin-top: 0;
+    color: white;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 22px;
+    background: rgba(255, 255, 255, 0.95);
+    color: black;
+}
+
+caption {
+    padding: 15px;
+    color: #ffab91;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+th, td {
+    border: 2px solid #333;
+    padding: 12px 7px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+thead th {
+    background: #f2f2f2;
+}
+
+.day {
+    background: #eeeeee;
+    min-width: 95px;
+}
+
+/* Colour-coded timetable cells */
+
+.red {
+    background: #ed7d31;
+}
+
+.yellow {
+    background: #ffc000;
+}
+
+.blue {
+    background: #b4c7e7;
+}
+
+.green {
+    background: #a9d18e;
+}
+
+.cream {
+    background: #fff2cc;
+}
+
+.bright-yellow {
+    background: #ffff00;
+}
+
+.grey {
+    background: #d6dce5;
+}
+
+.cyan {
+    background: #00aeef;
+}
+
+.orange {
+    background: #ed7d31;
+}
+
+.lunch {
+    background: white;
+    font-size: 16px;
+}
+
+.mentor {
+    background: white;
+}
+
+.subject:hover {
+    filter: brightness(1.08);
+}
+
+.faculty-table th {
+    background: #eeeeee;
+}
+
+.faculty-table td {
+    padding: 9px 5px;
+}
+
+.footer {
+    line-height: 1.9;
+    font-weight: bold;
+}
+
+.approvals {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: center;
+    margin-top: 35px;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 12px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+    }
+
+    .details {
+        font-size: 12px;
+    }
+
+    .approvals {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <h1>ABES Engineering College, Ghaziabad</h1>
+        <h2>ECE-3 Class Time Table</h2>
+        <p>Department: Applied Sciences and Humanities</p>
+        <p>Session 2026-27 | Odd Semester</p>
+    </header>
+
+    <div class="details">
+        <div>
+            Course: B.Tech<br>
+            Semester: I<br>
+            Section: ECE-3<br>
+            Class Room: KC-308
+        </div>
+
+        <div>
+            Time Table: TM-07<br>
+            Effective From: 21.09.2026
+        </div>
+    </div>
+
+    <div class="table-wrap">
+    <table>
+        <caption>Weekly Class Schedule</caption>
+
+        <thead>
+            <tr>
+                <th rowspan="2">Day</th>
+                <th>I</th>
+                <th>II</th>
+                <th>III</th>
+                <th>IV</th>
+                <th>V</th>
+                <th>VI</th>
+                <th>VII</th>
+                <th>VIII</th>
+                <th>IX</th>
+            </tr>
+
+            <tr>
+                <th>08:50-09:40</th>
+                <th>09:40-10:30</th>
+                <th>10:40-11:30</th>
+                <th>11:30-12:20</th>
+                <th>12:20-01:10</th>
+                <th>01:10-02:00</th>
+                <th>02:00-02:50</th>
+                <th>02:50-03:40</th>
+                <th>03:40-04:30</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th class="day">Monday</th>
+                <td class="cream subject">25CS101<br>(SHV)<br>KC-308</td>
+                <td class="blue subject">25EC101<br>(AJ)<br>KC-308</td>
+                <td class="yellow subject">25AS102<br>(ABL)<br>KC-308</td>
+                <td class="green subject">25HU101<br>(MJ)<br>KC-308</td>
+                <td rowspan="5" class="lunch">LUNCH</td>
+                <td class="red subject">25ME101<br>(MYK)<br>KC-308</td>
+                <td class="yellow subject">25AS102<br>(ABL, TM)<br>KC-308</td>
+                <td colspan="2" class="cyan subject">
+                    25EC151<br>(AJ, US)<br>BH-115 &amp; BH-216
+                </td>
+            </tr>
+
+            <tr>
+                <th class="day">Tuesday</th>
+                <td class="bright-yellow subject">25HU102<br>(VM)<br>KC-308</td>
+                <td class="cream subject">25CS101<br>(SHV)<br>KC-308</td>
+                <td colspan="2" class="grey subject">
+                    25VA151<br>(RPS)<br>KC Block V Floor (KC-509)
+                </td>
+                <td class="yellow subject">25AS102<br>(ABL)<br>KC-308</td>
+                <td class="red subject">25ME101<br>(MYK)<br>KC-308</td>
+                <td class="green subject">25HU101<br>(MJ)<br>KC-308</td>
+                <td class="blue subject">25EC101<br>(AJ)<br>KC-308</td>
+            </tr>
+
+            <tr>
+                <th class="day">Wednesday</th>
+                <td class="blue subject">25EC101<br>(AJ)<br>KC-308</td>
+                <td class="red subject">25ME101<br>(MYK)<br>KC-308</td>
+                <td class="yellow subject">25AS102<br>(ABL)<br>KC-308</td>
+                <td class="cream subject">25CS101<br>(SHV)<br>KC-308</td>
+                <td colspan="2" class="orange subject">
+                    25ME151<br>(MYK, DTS)<br>VB Block
+                </td>
+                <td colspan="2" class="mentor">
+                    Mentor-Mentee<br>(VM, SHV, SY)<br>VB Block
+                </td>
+            </tr>
+
+            <tr>
+                <th class="day">Thursday</th>
+                <td class="yellow subject">25AS102<br>(ABL)<br>KC-308</td>
+                <td class="red subject">25ME101<br>(MYK)<br>KC-308</td>
+                <td class="blue subject">25EC101<br>(AJ)<br>KC-308</td>
+                <td class="green subject">25HU101<br>(MJ)<br>KC-308</td>
+                <td colspan="2" class="cream subject">
+                    25CS151<br>(SHV)<br>Group-1 &amp; Group-2 KC-509
+                </td>
+                <td class="yellow subject">25AS102<br>(ABL)<br>KC-308</td>
+                <td class="bright-yellow subject">25HU102<br>(VM)<br>KC-308</td>
+            </tr>
+
+            <tr>
+                <th class="day">Friday</th>
+                <td class="grey subject">25VA101<br>(RPS)<br>KC-308</td>
+                <td class="yellow subject">25AS102<br>(ABL)<br>KC-308</td>
+                <td class="bright-yellow subject">25HU102<br>(VM)<br>KC-308</td>
+                <td class="red subject">25ME101<br>(MYK)<br>KC-308</td>
+                <td class="cream subject">25CS101<br>(SHV)<br>KC-308</td>
+                <td class="blue subject">25EC101<br>(AJ)<br>KC-308</td>
+                <td colspan="2" class="green subject">
+                    25HU151<br>(MJ, JKR)<br>KC Block V Floor (KC-510)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div class="table-wrap">
+    <table class="faculty-table">
+        <caption>Subject and Faculty Details</caption>
+
+        <tr>
+            <th>SUBCODE</th>
+            <th>SUBNAME</th>
+            <th>FACULTY</th>
+            <th>LAB CODE</th>
+            <th>LAB NAME</th>
+            <th>FACULTY</th>
+        </tr>
+
+        <tr>
+            <td class="red">25ME101</td>
+            <td class="red">Basics of Mechanical &amp; Automation Engg.</td>
+            <td class="red">Mr. Mayank Kushwaha (MYK)</td>
+            <td class="cream">25CS151</td>
+            <td class="cream">Programming in C++ Lab</td>
+            <td class="cream">Ms. Shailja Varshney (SHV)</td>
+        </tr>
+
+        <tr>
+            <td class="blue">25EC101</td>
+            <td class="blue">Basics of Electronics Engg.</td>
+            <td class="blue">Ms. Arpita Johri (AJ)</td>
+            <td class="green">25HU151</td>
+            <td class="green">Professional Communication Lab</td>
+            <td class="green">Dr. Mokshi Juyal (MJ), Dr. Jasmeen Kaur (JKR)</td>
+        </tr>
+
+        <tr>
+            <td class="yellow">25AS102</td>
+            <td class="yellow">Fundamentals of Linear Algebra and Statistics</td>
+            <td class="yellow">Dr. Arti Bansal (ABL)</td>
+            <td class="cyan">25EC151</td>
+            <td class="cyan">Basic Electronics Engg. Lab</td>
+            <td class="cyan">Ms. Arpita Johri (AJ), Ms. Upasana Sharma (US)</td>
+        </tr>
+
+        <tr>
+            <td class="cream">25CS101</td>
+            <td class="cream">Programming in C++</td>
+            <td class="cream">Ms. Shailja Varshney (SHV)</td>
+            <td class="orange">25ME151</td>
+            <td class="orange">Digital Manufacturing Lab</td>
+            <td class="orange">Mr. Mayank Kushwaha (MYK), Dr. Tanvi Saxena (DTS)</td>
+        </tr>
+
+        <tr>
+            <td class="green">25HU101</td>
+            <td class="green">Soft Skills</td>
+            <td class="green">Dr. Mokshi Juyal (MJ)</td>
+            <td class="grey">25VA151</td>
+            <td class="grey">Web Designing Workshop I</td>
+            <td class="grey">Mr. Rohit Pratap Singh (RPS)</td>
+        </tr>
+
+        <tr>
+            <td class="bright-yellow">25HU102</td>
+            <td class="bright-yellow">Design Thinking</td>
+            <td class="bright-yellow">Dr. Varun Mohan (VM)</td>
+            <td></td>
+            <td class="mentor">Mentor-Mentee</td>
+            <td class="mentor">Dr. Varun Mohan (VM), Ms. Shailja Varshney (SHV), Ms. Sucheta Yadav (SY)</td>
+        </tr>
+    </table>
+    </div>
+
+    <div class="footer">
+        Academic Program Coordinator: Dr. Shweta Choudhry<br>
+        Class Mentor-1: Dr. Varun Mohan (VM)<br>
+        Class Mentor-2: Ms. Shailja Varshney (SHV)<br>
+        Class Mentor-3: Ms. Sucheta Yadav (SY)
+    </div>
+
+    <div class="approvals">
+        <div>
+            Time Table I/C<br>
+            Dr. Nimisha &amp; Dr. Vikash Singh
+        </div>
+
+        <div>
+            HOD<br>
+            Dr. Jaya Singh
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
